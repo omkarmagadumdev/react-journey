@@ -9,6 +9,8 @@
 
 - crossorigin (on script): Tells the browser to load a cross-origin script with CORS (usually as anonymous) so it can fetch from a CDN and report detailed errors without sending credentials.
 
+- cdn link is not preffered way to bring React & ReactDOM to our project
+
 
 
 
@@ -57,3 +59,15 @@ npm install -D parcel
 - transitive dependencies  ==> which means parcvel has its own dependcies those has thare own dependcies thats why node module has lot of code 
 - `node modules` we dont have to push these to github even if we lost or delete it we can again get it  if we have `pakage.json` & `packagelock.jason` we can install it again using `npm install`
 
+# Igniting our App
+
+- `npx parcel index.html`- it will ignite our project 
+- `npm install react` installing react through npm is preffered way.here `-D ` is not there because we want react normal dependcies not devDependecies and also easy to manage the versions in package.json and packagelock.json.
+- `npm i react-dom ` `i` is the shot form of install.
+- `npx parcel index.html` start the server.
+- it gives the error react is not definds because we installed it. will still need to  import it from our node_module `import react from "react"`,`import ReactDOM from "ReactDOM"`
+
+## parcel
+- Dev build
+- local server
+- HMR - hot module Replacement
