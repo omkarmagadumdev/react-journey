@@ -39,3 +39,21 @@ root.render(parent)
     </div>
 // that root.render is replaced this root basically react is taken control over the html
 ```
+
+
+```js
+
+npm install -D parcel
+```
+- there ar two types of dependcies  we can  install 
+1. Is dev dependcies ==> development phase
+2. Normal dependcies ==> use in production also  
+
+- in parcel when installed `"parcel": "^2.15.4"` (^) this mean caret which will update the parcel if any update came if (~) tilde means upadte the major update only
+
+- `pakage.json` file is created after install of parecel it is configuration for npm which will keep track of what version of pecake is installed in our project.
+- `packagelock.jason` ==> keep track of exact version that being install.
+- `node modules` which we installed  parcel it is fetching all the code from parcel and putting inside the node modules.
+- transitive dependencies  ==> which means parcvel has its own dependcies those has thare own dependcies thats why node module has lot of code 
+- `node modules` we dont have to push these to github even if we lost or delete it we can again get it  if we have `pakage.json` & `packagelock.jason` we can install it again using `npm install`
+
