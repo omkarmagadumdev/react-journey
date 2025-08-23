@@ -65,9 +65,36 @@ npm install -D parcel
 - `npm install react` installing react through npm is preffered way.here `-D ` is not there because we want react normal dependcies not devDependecies and also easy to manage the versions in package.json and packagelock.json.
 - `npm i react-dom ` `i` is the shot form of install.
 - `npx parcel index.html` start the server.
+- `npx parcel build index.html` it will create dist 
 - it gives the error react is not definds because we installed it. will still need to  import it from our node_module `import react from "react"`,`import ReactDOM from "ReactDOM"`
 
 ## parcel
 - Dev build
 - local server
 - HMR - hot module Replacement
+- it uses file watching algo written in c++
+- caching - faster builds `.parcel-chache`
+- image optimization
+- bundling(parcel is a bundler)
+- compress 
+- consistent Hashing
+- code splitting
+- differential bundling 
+etc
+
+- browserslist - which browser and which version it should be camapitable need to configure in package.json.
+
+
+# Laying the foundation
+
+- `npx parcel index.html` we dont have to run this commond again and again 
+```js
+  "scripts": {
+    "start":"parcel index.html",
+    "build" : "parcel build index.html",
+    "test": "jest"
+  },
+```
+- to start `npm run start / npm start ,npm run build....`we can give a script to it  is a industry standerd.
+
+- JSX is not HTML in js it is HTML like syntax or XML
