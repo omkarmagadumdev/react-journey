@@ -62,7 +62,7 @@ npm install -D parcel
 # Igniting our App
 
 - `npx parcel index.html`- it will ignite our project 
-- `npm install react` installing react through npm is preffered way.here `-D ` is not there because we want react normal dependcies not devDependecies and also easy to manage the versions in package.json and packagelock.json.
+- `npm install react` installing react through npm is preffered way.here `-D ` is not there because we want react normal dependcies with devDependecies and also easy to manage the versions in package.json and packagelock.json.
 - `npm i react-dom ` `i` is the shot form of install.
 - `npx parcel index.html` start the server.
 - `npx parcel build index.html` it will create dist 
@@ -97,4 +97,8 @@ etc
 ```
 - to start `npm run start / npm start ,npm run build....`we can give a script to it  is a industry standerd.
 
-- JSX is not HTML in js it is HTML like syntax or XML
+- `JSX` is not HTML in js it is HTML like syntax or XML
+- jsx(`transpiles` before it reaches the Js) - parcel - Babel.
+- behind the scene `jsx ==> React.createElement ==>ReactElement-JS-object==>HTMLElement(render)`(being transpiled).
+- `babel` is tranpiling jsx to React.createElement.
+- jsx  is `camelcase`.
