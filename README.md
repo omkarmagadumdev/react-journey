@@ -110,8 +110,9 @@ etc
 2. functional components(new way of writing components).
 
 ## React functional components
-
+```js
 const HeadingComponent = () =>{
     return <h1>namaste React</h1>
 }
+```
 
