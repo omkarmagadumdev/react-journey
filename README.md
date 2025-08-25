@@ -111,5 +111,7 @@ etc
 
 ## React functional components
 
-
+const HeadingComponent = () =>{
+    return <h1>namaste React</h1>
+}
 
