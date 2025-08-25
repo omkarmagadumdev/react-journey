@@ -102,3 +102,14 @@ etc
 - behind the scene `jsx ==> React.createElement ==>ReactElement-JS-object==>HTMLElement(render)`(being transpiled).
 - `babel` is tranpiling jsx to React.createElement.
 - jsx  is `camelcase`.
+
+# React components
+
+- Thare are two type of React components.
+1. class Based componments(old way of writing components).
+2. functional components(new way of writing components).
+
+## React functional components
+
+
+

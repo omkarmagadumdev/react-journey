@@ -10,4 +10,9 @@ const heading = <h1 id="heading" >hello</h1>
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
-root.render(heading)
+root.render(heading);
+
+
+const HeadingComponent = () =>{
+    return <h1>namaste React</h1>
+}
