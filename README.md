@@ -116,3 +116,30 @@ const HeadingComponent = () =>{
 }
 ```
 
+```js
+const HeadingComponent = ()=>{
+    return <h1 .className ="heading"> Nmaste react</h1>
+};
+
+
+```
+## component composition
+
+```js
+const title = () =>(
+    <h1 classname="head" tabindex="5" >
+        Namaste React using jsx 
+    </h1>
+);
+
+//component compositions
+
+const HeadingComponent = () =>(
+    <div>
+        <title />
+        <h1 clasname="heading">Namaste React functional component</h1>
+    </div>
+)
+```
+- `Functional component` : is a normal js function which return some piece of react element and jsx code.
+- JSX prevents `cross site scripting`.
