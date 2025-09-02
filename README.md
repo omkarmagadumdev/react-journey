@@ -143,3 +143,29 @@ const HeadingComponent = () =>(
 ```
 - `Functional component` : is a normal js function which return some piece of react element and jsx code.
 - JSX prevents `cross site scripting`.
+
+
+# project 
+
+## planning
+1. Header - logo / links- home,aout,cart.
+2. body. - Search bar,search buttons,restarunt cards- tital of food,rating.
+3. fotter - copyright and other things.
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ * 
+ * body
+ * - Search
+ * - restarunt cotainer
+ *      - Restaurant card
+ *          - img
+ *          - Name of res,Star Rating,cuisines,delivery tie
+ * footer
+ * - copyright
+ * - link
+ * - Adress
+ * - contact information
+ * 
+ */

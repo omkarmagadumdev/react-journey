@@ -1,6 +1,45 @@
-#heading{
-    color: red;
-    /* display: flex;
-    align-items : center; */
-    /* justify-content: center ; */
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
 }
+.logo{
+    width: 200px;
+
+}
+.nav-items{
+
+  padding: 0px 20px;
+}
+.nav-items > ul{
+    display: flex;
+    font-size: 24px;
+  list-style-type: none;
+}
+
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
+} 
+
+.res-card{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.search{
+    padding: 10px;
+    
+}
+.res-logo {
+    margin: 5px;
+  width: 100%;          /* takes full card width */
+  height: 150px;        /* fix the height */
+  object-fit: cover;    /* crops nicely instead of stretching */
+  border-bottom: 1px solid #ddd;
+}
+
