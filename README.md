@@ -170,5 +170,5 @@ const HeadingComponent = () =>(
  * 
  */
 
- # Revised
-# Revised(2)
+
+- passing prop to the component is just like the passing argument to the functions.
