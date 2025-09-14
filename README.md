@@ -172,3 +172,5 @@ const HeadingComponent = () =>(
 
 
 - passing prop to the component is just like the passing argument to the functions.
+- `config driven ui`: ui is config driven.
+    
