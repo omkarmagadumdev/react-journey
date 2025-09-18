@@ -1,132 +1,49 @@
-:root{
-  --text:#0f172a;
-  --muted:#64748b;
-  --border:#e5e7eb;
-  --card:#ffffff;
-  --shadow: 0 6px 20px rgba(0,0,0,0.10);
-  --shadow-h: 0 12px 28px rgba(0,0,0,0.14);
-  --rating-bg:#ecfdf5;
-  --rating-dot:#1f9254;
-}
-
-/* base */
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  background:#fafafa;
-  color:var(--text);
-}
-
-/* bigger header */
 .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 24px;          /* increased */
-  border-bottom:1px solid #f1f5f9;
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-.logo{ width:72px; height:72px; object-fit:cover; border-radius:14px; } /* bigger */
-.logo-container{ display:flex; align-items:center; gap:14px; }
-.nav-items{ padding:0 8px; }
-.nav-items > ul{
-  display:flex; gap:12px; list-style-type:none; margin:0; padding:0; font-size:20px; /* bigger */
-}
-.nav-items > ul > li{
-  padding:10px 14px; border-radius:12px; color:#64748b;
-}
-.nav-items > ul > li:hover{ background:#f1f5f9; color:#111827; }
-
-/* layout */
-.body{ max-width:1200px; margin:22px auto; padding:0 16px; }
-.search{ padding:12px 0; color:#64748b; }
-
-.res-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  justify-content: space-between;
+  border: 1px solid black;
 }
+.logo{
+  width: 200px;
+}
+.nav-items{
+  padding: 0px 20px;
+}
+.nav-items>ul{
+  font-size: 24px;
+  display: flex;
+  list-style-type: none;
+  
+}
+.nav-items>ul >li{
+  padding: 10px;
+  margin: 10px;
+}
+.res-card{
+  padding: 5px;
+  width: 200px;
+ min-height: 300px;
 
-/* Make cards slimmer so more fit per row */
-.res-card {
-  position: relative;
-  flex: 1 1 220px;   /* lower flex-basis (was 380px or 300px) [web:54][web:64] */
-  max-width: 265px;  /* lower max-width (was 420px+) */
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-/* You may want to slightly reduce image height for a good look: */
-.res-logo {
-  width: 100%;
-  height: 170px;     /* a little shorter for smaller cards */
-  object-fit: cover;
-  display: block;
-}
+  /* flex-direction: column; */
+ /* border: 1px solid black; */
+ /* justify-content: space-between; */
 
-/* image with gradient fade bottom */
+}
+.res-card:hover{
+  cursor: pointer;
+  border: 1px solid black;
+}
+.search{
+  padding: 10px;
+}
 .res-logo{
-  width:100%;
-  height: 260px;        /* was 220px — taller visual like Swiggy big tiles [6] */
-  object-fit:cover;
-  display:block;
-}
-.res-card::after{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:110px;
-  height:100px;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 100%);
-  pointer-events:none;
+   width: 100%;
+
 }
 
-/* promo ribbon on image bottom-left */
-.ribbon{
-  position:absolute;
-  left:18px;
-  bottom:130px;
-  padding:9px 14px;
-  border-radius:12px;
-  background:#111827;
-  color:#fff;
-  font-weight:800;
-  font-size:1.05rem;
-  letter-spacing:.2px;
-  box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
-/* content */
-.res-card h3{ margin:12px 18px 6px; font-size:1.22rem; font-weight:800; }
-.res-card h4{ margin:6px 18px 12px; font-size:1rem; }
-.cuisines{ margin:0 18px 12px; font-size:1rem; }
-.meta{ margin:0 18px 14px; font-size:1rem; gap:12px; }
-.locality{ margin:-2px 18px 18px; font-size:.98rem; }
-.sep{ color:#94a3b8; }
-
-/* rating pill */
-.rating{
-  display:inline-flex; align-items:center; gap:6px;
-  padding:6px 10px; border-radius:999px;
-  background:var(--rating-bg); color:#064e3b;
-}
-.rating .badge{ width:8px; height:8px; border-radius:50%; background:var(--rating-dot); }
-
-/* locality */
-.locality{ margin: -2px 16px 16px; color: var(--muted); font-size: .95rem; }
-
-
-@media (max-width: 1100px){
-  .res-card { flex: 1 1 300px; max-width: 360px; }
-}
-@media (max-width: 700px){
-  .res-card{ flex: 1 1 100%; max-width: 100%; }
-  .res-logo{ height: 150px; }
-  .ribbon{ bottom: 100px; }
+.res-container{
+   display: flex;
+ flex-wrap: wrap;
+ margin: 1px;
+ /* justify-content: space-between; */
 }
