@@ -173,3 +173,4 @@ const HeadingComponent = () =>(
 
 - passing prop to the component is just like the passing argument to the functions `lingo:passing props to component`.
 - `config driven ui`: ui is config driven.
+- `?`optional chaining.
