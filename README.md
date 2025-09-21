@@ -174,3 +174,6 @@ const HeadingComponent = () =>(
 - passing prop to the component is just like the passing argument to the functions `lingo:passing props to component`.
 - `config driven ui`: ui is config driven.
 - `?`optional chaining.
+- whenever doing .map have to give key because if new card came in react will rerender all the cards. using indexes as id is not recommded.
+
+- `not using keys(not acceptable) <<<<<< index as key < unique key(best practice).`
