@@ -24,9 +24,9 @@
   width: 200px;
  min-height: 300px;
 
-  /* flex-direction: column; */
- /* border: 1px solid black; */
- /* justify-content: space-between; */
+  /* flex-direction: column;
+ border: 1px solid black; */
+ justify-content: space-between;
 
 }
 .res-card:hover{
