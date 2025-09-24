@@ -2,7 +2,7 @@ const Header =()=>{
   return(
     <div className="header">
        <div className="logo-container" >
-        <img className="logo" src="" alt="" />
+        <img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3K8f8hdrZw-SfHxZSG0GogsRClYEHyAqGEg&s" alt="" />
        </div>
        <div className="nav-items">
         <ul>

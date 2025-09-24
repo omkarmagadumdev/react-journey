@@ -17,7 +17,7 @@ const RestaurentCard =(props)=>{
 
   return(
     <div className="res-card" style={{backgroundColor:"#f0f0f0",}}>
-      <img className="res-logo" src={+cloudinaryImageId} alt="res-logo" />
+      <img className="res-logo"  alt="res-logo" />
       <h3>{name}</h3>
      <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating}</h4>
