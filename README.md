@@ -177,3 +177,17 @@ const HeadingComponent = () =>(
 - whenever doing .map have to give key because if new card came in react will rerender all the cards. using indexes as id is not recommded.
 
 - `not using keys(not acceptable) <<<<<< index as key < unique key(best practice).`
+
+- Two type of export `named export(multiple export)` and `default export`
+
+- Default Export/Import
+
+```js
+export default component;
+import component from "path";
+
+- Named Export/Import
+
+Export const Component;
+import {component} from "path"
+```
