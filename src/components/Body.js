@@ -1,13 +1,17 @@
 
 import RestaurentCard from "./RestaurentCard";
-// import resList from "../utils/mockData"
-
-
+import { useState } from "react";
+import resList from "../utils/mockData";
 
 const Body = () =>{
+// Local State Variable - Super powerful variable.
+const [ListOfRestaurents,setListOfRestaurents] =  useState(resList);
 
-  let ListOfRestaurents = [
-  {
+
+// Normal js variable
+
+  let ListOfRestaurentsjs = [
+{
     "info": {
       "id": "151649",
       "name": "Hotel Sai Nath & Sai Restaurant",
@@ -74,15 +78,17 @@ const Body = () =>{
           <button className="filter-btn" onClick= {() =>{
             //Filter logic here
 
-            ListOfRestaurents = ListOfRestaurents.filter(
+
+            const filteredList = ListOfRestaurents.filter(
               (res) => res.info.avgRating >4
             );
-            console.log(ListOfRestaurents)
+            setListOfRestaurents(filteredList);
+
 
           } } 
             >
             Top Rated Restaurent 
-          </button>
+          </button> 
         </div>
         <div className="search">Search</div>
         <div className="res-container">

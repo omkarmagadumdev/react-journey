@@ -1,199 +1,565 @@
 # React 🚀🚀
 
-## react cdn 
-```js
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-```
-- CDN: A Content Delivery Network is a distributed set of servers that delivers files (like JS/CSS/images) from locations closer to users to reduce latency and speed up loading.
 
-- crossorigin (on script): Tells the browser to load a cross-origin script with CORS (usually as anonymous) so it can fetch from a CDN and report detailed errors without sending credentials.
-
-- cdn link is not preffered way to bring React & ReactDOM to our project
+## Documenting my React learnig journey through hands-on projects — I believe in learning by building.
 
 
+# 01:
 
+## Q: What is `Emmet`?
 
-```js
-<div id="parent">
-    <div id="child">
-        <h1>i'am h1 tag</h1>
-        <h2>i'am h1 tag</h2>  ==> if want to use sibling have to make it an array
-    </div>
-</div> 
+A: `Emmet` is the essential toolkit for web-developers. It allows you to `type shortcuts` that are then expanded into full pieces of code for writing `HTML and CSS`, based on an abbreviation structure most developers already use that expands into full-fledged HTML markup and CSS rules.
 
-// if we want to do this in react
+## Q: What is `CDN`? Why do we use it?
 
-const parent  = React.createElement("div",{id:"parent"},React.createElement("div",{id:"child"},[React.createElement("h1",{},"i am an h1 tag"),React.createElement("h2",{},"iam h2 tag")]))
+A: A `content delivery network (CDN)` refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
+The goal is to provide high availability and performance by distributing the service spatially relative to end users.
 
+## Q: Why is `React known as React`?
 
-console.log(parent)
-const  root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent)
+A: And it's called `React` because it `reacts`. It was developed by Facebook (a site that CONSTANTLY updates their data) to improve the user interface development and more effectively change (REACT to) what the user sees when they're doing things like mouse clicking, submitting and typing.
 
-```
-- react element(object) ==> HTML(which the browser understands)
-- With lots of nested divs, the structure gets complicated; JSX makes it much more readable and preferred
+## Q: What is `crossorigin in script tag`?
 
-```html
-  <div id="root">
-        omkar is here!
-    </div>
-// that root.render is replaced this root basically react is taken control over the html
+A: The `crossorigin` attribute sets the mode of the request to an HTTP CORS Request.
+The purpose of crossorigin attribute is used to share the resources from one domain to another domain. Basically, it is used to handle the CORS request. It is used to handle the CORS request that checks whether it is safe to allow for sharing the resources from other domains.
+
+### _Syntax_
+
+```sh
+<script crossorigin="anonymous|use-credentials">
 ```
 
+## Q: What is difference between `React and ReactDOM`?
+
+A: `React` is a JavaScript library for building User Interfaces whereas `ReactDOM` is also JavaScript library that allows `React to interact with the DOM`.
+
+The react package contains `React.createElement()`, `React.Component`, `React.Children`, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The react-dom package contains `ReactDOM.render()`, and in react-dom/server we have server-side rendering support with `ReactDOMServer.renderToString()` and `ReactDOMServer.renderToStaticMarkup()`.
+
+## Q: What is difference between `react.development.js` and `react.production.js` files via `CDN`?
+
+A: `Development` is the stage of an application before it's made public while `production` is the term used for the same application when it's made `public`.
+`Development build` is several times (maybe 3-5x) `slower` than the `production build`.
+
+## Q: What are `async and differ` attributes in `<script>` tag?
+
+A: `Async` - The async attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed as soon` as it is available (do not block HTML DOM construction during downloading process) and don’t wait for anything.
+
+### _Syntax_
 
 ```js
+<script async src="demo_async.js"></script>
+```
 
+`Defer` - The defer attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed after the page` has finished parsing(when browser finished DOM construction). The `defer attribute` tells the browser `not to wait for the script`. Instead, the browser will continue to process the HTML, build DOM.
+
+### _Syntax_
+
+```sh
+<script defer src="demo_defer.js"></script>
+```
+
+## Q: Difference between a `Library and Framework`?
+
+A: A framework is a set of pre-written code that provides a structure for developing software applications. A library, on the other hand, is a collection of pre-written code that can be used to perform specific tasks.
+
+A `library` is a collection of packages that perform specific operations whereas a `framework` contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React js is library and Angular is Framework.
+
+The `framework` provides the flow of a software application and tells the developer what it needs and calls the code provided by the developer as required. If a `library` is used, the application calls the code from the library.
+
+
+# 02:
+
+## Q: What is `npm`?
+
+A: `npm` is the world's largest Software Registry. The registry contains over 800,000 code packages. Open-source developers use `npm` to share software.
+
+npm is lots of things:
+
+- `npm` is the package manager for Node.js. It was created in 2009 as an open source project to help JavaScript developers easily share packaged modules of code.
+
+- The `npm` Registry is a public collection of packages of open-source code for` Node.js, front-end web apps, mobile apps, robots, routers`, and countless other needs of the JavaScript community.
+- `npm` alternative is `yarn`
+
+### How to initialize `npm`?
+
+```
+npm init
+```
+
+`npm init -y` can be used to skip the setup step, `npm` takes care of it and creates the `package.json` json file automatically , but without configurations.
+
+- `npm` is the command line client that allows developers to install and publish those packages.
+
+## Q: What is `Parcel/Webpack`? Why do we need it?
+
+A: `Parcel` and `webpack` are the bundlers used mostly for `JavaScript` or `Typescript` code that helps you to `minify, clean, and make your code compact` so that it becomes easier to send a request or receive the response from the server when it usually takes you to transfer multiple files without using any bundler for loading the page of your application. Both of these bundlers substantially reduce the time it takes for the transfer of data and files to the server from the application. Along with that both bundlers parcel and webpack remove the unnecessary comments, new lines, any kind of block delimiters, and white spaces while the functionality of the code remains unchanged.
+
+Use of `Parcel/Webpack`:
+Module bundlers are the way to organize and combine many files of JavaScript code into one file. A JavaScript bundler can be used when your project becomes too large for a single file or when you're working with libraries that have multiple dependencies.
+
+### installation commands:
+
+- Install:
+
+```js
 npm install -D parcel
 ```
-- there ar two types of dependcies  we can  install 
-1. Is dev dependcies ==> development phase
-2. Normal dependcies ==> use in production also  
 
-- in parcel when installed `"parcel": "^2.15.4"` (^) this mean caret which will update the parcel if any update came if (~) tilde means upadte the major update only
+`-D` is used for development and as a development dependency.
 
-- `pakage.json` file is created after install of parecel it is configuration for npm which will keep track of what version of pecake is installed in our project.
-- `packagelock.jason` ==> keep track of exact version that being install.
-- `node modules` which we installed  parcel it is fetching all the code from parcel and putting inside the node modules.
-- transitive dependencies  ==> which means parcvel has its own dependcies those has thare own dependcies thats why node module has lot of code 
-- `node modules` we dont have to push these to github even if we lost or delete it we can again get it  if we have `pakage.json` & `packagelock.jason` we can install it again using `npm install`
+- Parcel Commands :
+  - For development build:
+  ```
+  npx parcel <entry_point>
+  ```
+  - For production build :
+  ```
+  npx parcel build <entry_point>
+  ```
 
-# Igniting our App
+## Q: Why is `.parcel-cache` folder?
 
-- `npx parcel index.html`- it will ignite our project 
-- `npm install react` installing react through npm is preffered way.here `-D ` is not there because we want react normal dependcies with devDependecies and also easy to manage the versions in package.json and packagelock.json.
-- `npm i react-dom ` `i` is the shot form of install.
-- `npx parcel index.html` start the server.
-- `npx parcel build index.html` it will create dist 
-- it gives the error react is not definds because we installed it. will still need to  import it from our node_module `import react from "react"`,`import ReactDOM from "ReactDOM"`
+A: `cache folder` (or `.parcel-cache in parcel v2`) stores information about your project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason why parcel can be so fast in development mode.
 
-## parcel
-- Dev build
-- local server
-- HMR - hot module Replacement
-- it uses file watching algo written in c++
-- caching - faster builds `.parcel-chache`
-- image optimization
-- bundling(parcel is a bundler)
-- compress 
-- consistent Hashing
-- code splitting
-- differential bundling 
-etc
+## Q: What is `npx`?
 
-- browserslist - which browser and which version it should be camapitable need to configure in package.json.
+A: `npx` stands for `Node Package eXecute`. It is simply an `npm` package runner. It allows developers to execute any Javascript Package available on the npm registry without even installing it. npx is installed automatically with npm version 5.2.
+
+## Q: What is difference between `dependencies vs devDependencies`?
+
+A: `"dependencies"` : Packages required by your application in production. `"devDependencies"` : Packages that are only needed for local development and testing.
+
+## Q: What is Tree Shaking? in Parcel?
+
+A: `Tree shaking`, also known as `dead code elimination`, is the practice of `removing unused code in your production build`. It's important to ship as little code to your end-users as possible. By statically analyzing our source code, we can determine what's not being used and exclude it from our final bundle.
+
+## Q: What is Hot Module Replacement?
+
+A: `Hot Module Replacement (HMR)` exchanges, adds, or removes modules while an application is running, without a full reload. This can significantly speed up development in a few ways: Retain application state which is lost during a full reload. Save valuable development time by only updating what's changed.
+
+## Q: List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+
+### Parcel features:
+
+- Dev Build - parcel provides us develop build
+- Local Server - parcel also provides us a local server, which can be used to see live changes in our application.
+- HMR = Hot Module Replacement - exchanges, adds, or removes modules while an application is running, without a full reload
+
+and some of more cool features of Parcel are:
+
+- File Watching Algorithm - written in C++
+- Caching - Faster Builds
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree Shaking - remove unused code
+- Different Build for dev and prod bundles
+
+## Q: What is `.gitignore`? What should we add and not add into it?
+
+A: gitignore file tells Git which files to ignore when committing your project to the GitHub repository. gitignore is located in the root directory of your repo. / will ignore directories with the name.
+
+In our code we shouldn't add the files, which we can re-generate in future e.g, `node_modules`, `dist` etc.
+
+## Q: What is the difference between `package.json` and `package-lock.json` files?
+
+A: Both of these files have the same format, and perform similar functions in the root of a project. The difference is that `package-lock. json` cannot be published, and it will be ignored if found in any place other than the root project.
+
+The package. json is used for more than dependencies - like defining project properties, description, author & license information, scripts, etc. The package-lock. json is solely used to lock dependencies to a specific version number.
+
+## Q: Why should I not modify `package-lock.json`?
+
+A: It is a generated file and is not designed to be manually edited. Its purpose is to track the entire tree of dependencies (including dependencies of dependencies) and the exact version of each dependency. You should commit `package-lock.json` to your code repository
+
+You should avoid updating the `package.json` manually since it could break the synchronization between `package.json` and `package-lock. json`.
+
+## Q: What is `node_modules`? Is it a good idea to push that on git?
+
+A: The `node_modules` folder contains generated code. This is not code you've written and you should never make any updates to the files inside Node modules because there's a pretty good chance they'll get overwritten next time you install some modules.
+
+It is better to not commit the `node_modules` folder, and instead add it to your `.gitignore` file.
+
+Here are all the reasons why you shouldn't commit it: The node_modules folder has a massive size (up to Gigabytes). It is easy to recreate the node_modules folder via packages. json
+
+## Q: What is the `dist` folder?
+
+A: The `/dist` stands for distributable. The /dist folder contains the minimized version of the source code. The code present in the /dist folder is actually the code which is used on production web applications.
+
+Parcel's default directory for your output is named dist . The --dist-dir public tag defines the output folder for your production files and is named public to avoid confusion with the dist default directory.
+
+## Q: What is `browserlists`?
+
+A: Browserslist defines and shares the list of target browsers between various frontend build tools.
 
 
-# Laying the foundation
 
-- `npx parcel index.html` we dont have to run this commond again and again 
+# 03:
+
+## Q: What is `JSX`?
+
+A: JSX stands for JavaScript XML.
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or appendChild() methods.
+JSX makes it easier to write and add HTML in React.
+JSX converts HTML tags into react elements.
+
+### Example 1 using JSX:
+
 ```js
-  "scripts": {
-    "start":"parcel index.html",
-    "build" : "parcel build index.html",
-    "test": "jest"
-  },
+const myElement = <h1>I Love JSX!</h1>;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
 ```
-- to start `npm run start / npm start ,npm run build....`we can give a script to it  is a industry standerd.
 
-- `JSX` is not HTML in js it is HTML like syntax or XML
-- jsx(`transpiles` before it reaches the Js) - parcel - Babel.
-- behind the scene `jsx ==> React.createElement ==>ReactElement-JS-object==>HTMLElement(render)`(being transpiled).
-- `babel` is tranpiling jsx to React.createElement.
-- jsx  is `camelcase`.
+### Example 2 Without JSX:
 
-# React components
-
-- Thare are two type of React components.
-1. class Based componments(old way of writing components).
-2. functional components(new way of writing components).
-
-## React functional components
 ```js
-const HeadingComponent = () =>{
-    return <h1>namaste React</h1>
+const myElement = React.createElement('h1', {}, 'I do not use JSX!');
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+```
+
+## Q: Superpowers of `JSX`.
+
+A: Using JSX, you can write markup inside Javascript, providing you with a superpower to write logic and markup of a component inside a single .jsx file. JSX is easy to maintain and debug.
+
+### Example
+
+```js
+function greeting(user) {
+//JSX
+  return <h1>{user}, How are you!!!</h1>;
 }
 ```
 
-```js
-const HeadingComponent = ()=>{
-    return <h1 .className ="heading"> Nmaste react</h1>
-};
+## Q: Role of `type` attribute in script tag? What options can I use there?
 
+A: The `type` attribute specifies the type of the script. The type attribute identifies the content between the `<script>` and `</script>` tags. It has a Default value which is “text/javascript”.
+
+### `type` attribute can be of the following types:
+
+- `text/javascript` : It is the basic standard of writing javascript code inside the `<script>` tag.
+  ### Syntax
+  ```
+  <script type="text/javascript"></script>
+  ```
+- `text/ecmascript` : this value indicates that the script is following the `EcmaScript` standards.
+- `module`: This value tells the browser that the script is a module that can import or export other files or modules inside it.
+- `text/babel` : This value indicates that the script is a babel type and required bable to transpile it.
+- `text/typescript`: As the name suggest the script is written in `TypeScript`.
+
+## Q: `{TitleComponent}` vs `{<TitleComponent/>}` vs `{<TitleComponent></TitleComponent>}` in `JSX`.
+
+A: The Difference is stated below:
+
+- `{TitleComponent}`: This value describes the `TitleComponent` as a javascript expression or a variable.
+  The `{}` can embed a javascript expression or a variable inside it.
+- `<TitleComponent/>` : This value represents a Component that is basically returning Some JSX value. In simple terms `TitleComponent` a function that is returning a JSX value.
+  A component is written inside the `{<  />}` expression.
+- `<TitleComponent></TitleComponent>` : `<TitleComponent />` and `<TitleComponent></TitleComponent>` are equivalent only when `< TitleComponent />` has no child components. The opening and closing tags are created to include the child components.
+
+### Example
+
+```js
+<TitleComponent>
+    <FirstChildComponent />
+    <SecondChildComponent />
+    <ThirdChildComponent />
+</TitleComponent>
+```
+
+### if there are no child elements, then we can write
+
+```js
+<TitleComponent />
+```
+
+
+# 04:
+
+## Q: Is `JSX` mandatory for React?
+
+A: `JSX` is an Extension Syntax that allows writing HTML and Javascript together easily in React and is used to create React elements. These elements are then rendered to the React DOM. Each JSX element is just to make use of React easy and for calling React.createElement(component, props, …children) with less work. So, anything that is done with JSX can also be done with just plain JavaScript. So `JSX` is not mandatory but is used for writing better and clean code instead of writing code using `React.CreateElement`.
+
+#### Example of `JSX`
 
 ```
-## component composition
+const sample = <h2>Greetings</h2>;
+```
+
+## Q: Is `ES6` mandatory for React?
+
+A: `ES6` is not mandatory for `React` but is highly recommendable. The latest projects created on React rely a lot on ES6. React uses ES6, and you should be familiar with some of the new features like: Classes, Arrow Functions, Variables(let, const).
+ES6 stands for ECMAScript 6. ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015.
+
+## Q: `{TitleComponent}` vs `{<TitleComponent/>}` vs `{<TitleComponent></TitleComponent>}` in `JSX`.
+
+A: The Difference is stated below:
+
+- `{TitleComponent}`: This value describes the `TitleComponent` as a javascript expression or a variable or React element.
+  The `{}` can embed a javascript expression or a variable or React element inside it.
+- `<TitleComponent/>` : This value represents a Component that is basically returning Some JSX value. In simple terms `TitleComponent` a function that is returning a JSX value. If component is written inside the `{<  />}` expression.
+- `<TitleComponent></TitleComponent>` : `<TitleComponent />` and `<TitleComponent></TitleComponent>` are equivalent only when `< TitleComponent />` has no child components. The opening and closing tags are created to include the child components.
+
+#### Example
 
 ```js
-const title = () =>(
-    <h1 classname="head" tabindex="5" >
-        Namaste React using jsx 
-    </h1>
-);
+<TitleComponent>
+    <FirstChildComponent />
+    <SecondChildComponent />
+    <ThirdChildComponent />
+</TitleComponent>
+```
 
-//component compositions
+## Q: How can I write `comments` in JSX?
 
-const HeadingComponent = () =>(
-    <div>
-        <title />
-        <h1 clasname="heading">Namaste React functional component</h1>
+A: JSX comments are written as follows:
+
+- `{/*  */}` - for single or multiline comments
+
+#### Example
+
+```js
+{/* A JSX comment */}
+{/*
+  Multi
+  line
+  JSX
+  comment
+*/}
+```
+
+## Q: What is `<React.Fragment></React.Fragment>` and `<></>`?
+
+A: `<React.Fragment></React.Fragment>` is a feature in React that allows you to return multiple elements from a React component by allowing you to group a list of children without adding extra nodes to the DOM.
+`<></>` is the shorthand tag for `React.Fragment`. The only difference between them is that the shorthand version does not support the key attribute.
+
+#### Example
+
+```js
+return (
+        <React.Fragment>
+            <Header />
+            <Navigation />
+            <Main />
+            <Footer />
+        </React.Fragment>
+    );
+
+return (
+        <>
+            <Header />
+            <Navigation />
+            <Main />
+            <Footer />
+        </>
+    );
+```
+
+## Q: What is `Reconciliation` in React?
+
+A: `Reconciliation` is the process through which React updates the Browser DOM and makes React work faster. React use a `diffing algorithm` so that component updates are predictable and faster. React would first calculate the difference between the real DOM and the copy of DOM (Virtual DOM) when there's an update of components.
+React stores a copy of Browser DOM which is called `Virtual DOM`. When we make changes or add data, React creates a new Virtual DOM and compares it with the previous one. Comparison is done by `Diffing Algorithm`.
+React compares the Virtual DOM with Real DOM. It finds out the changed nodes and updates only the changed nodes in Real DOM leaving the rest nodes as it is. This process is called Reconciliation.
+
+                                 (or)
+
+Reconciliation is the process by which React updates the UI to reflect changes in the component state. The reconciliation algorithm is the set of rules that React uses to determine how to update the UI in the most efficient way possible. React uses a virtual DOM (Document Object Model) to update the UI.
+
+## Q: What is `React Fiber`?
+
+A: React Fiber is a concept of ReactJS that is used to render a system faster, smoother and smarter.
+The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React’s reconciliation algorithm to solve some long-standing issues in React.
+Because Fiber is asynchronous, React can:
+
+- Pause, resume, and restart rendering work on components as new updates come in
+- Reuse previously completed work and even abort it if not needed
+- Split work into chunks and prioritize tasks based on importance
+
+## Q: Why do we need `keys` in React?
+
+A: A `key` is a special attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. In other words, we can say that keys are unique Identifier used to give an identity to the elements in the lists.
+Keys should be given to the elements within the array to give the elements a stable identity.
+
+#### Example
+
+```js
+<li key={0}>1</li>
+<li key={1}>2</li>
+<li key={2}>3</li>
+```
+
+## Q: Can we use `index as keys` in React?
+
+A: Yes, we can use the `index as keys`, but it is not considered as a good practice to use them because if the order of items may change. This can negatively impact performance and may cause issues with component state.
+Keys are taken from each object which is being rendered. There might be a possibility that if we modify the incoming data react may render them in unusual order.
+
+## Q: What is `props in React`? Ways to.
+
+A: props stands for properties. Props are arguments passed into React components. props are used in React to pass data from one component to another (from a parent component to a child component(s)). They are useful when you want the flow of data in your app to be dynamic.
+
+#### Example
+
+```js
+function App() {
+  return (
+    <div className="App">
+      <Tool name="Chetan Nada" tool="Figma"/> // name and tool are props
     </div>
-)
+  )
+}
 ```
-- `Functional component` : is a normal js function which return some piece of react element and jsx code.
-- JSX prevents `cross site scripting`.
 
+## Q: What is `Config Driven UI`?
 
-# project 
+A: `Config Driven UI` are based on the configurations of the data application receives. It is rather a good practice to use config driven UIs to make application for dynamic.
+It is a very common & basic approach to interact with the User. It provides a generic interface to develop things which help your project scale well. It saves a lot of development time and effort.
+A typical login form, common in most of the Apps. Most of these forms also get frequent updates as the requirements increase in terms of Form Validations, dropdown options,.. or design changes.
 
-## planning
-1. Header - logo / links- home,aout,cart.
-2. body. - Search bar,search buttons,restarunt cards- tital of food,rating.
-3. fotter - copyright and other things.
-/**
- * Header
- * - Logo
- * - Nav Items
- * 
- * body
- * - Search
- * - restarunt cotainer
- *      - Restaurant card
- *          - img
- *          - Name of res,Star Rating,cuisines,delivery tie
- * footer
- * - copyright
- * - link
- * - Adress
- * - contact information
- * 
- */
+## Q: Difference between `Virtual DOM` and `Real DOM`?
 
+A: DOM stands for `Document Object Model`, which represents your application UI and whenever the changes are made in the application, this DOM gets updated and the user is able to visualize the changes. DOM is an interface that allows scripts to update the content, style, and structure of the document.
 
-- passing prop to the component is just like the passing argument to the functions `lingo:passing props to component`.
-- `config driven ui`: ui is config driven.
-- `?`optional chaining.
-- whenever doing .map have to give key because if new card came in react will rerender all the cards. using indexes as id is not recommded.
+- `Virtual DOM`
+  - The Virtual DOM is a light-weight abstraction of the DOM. You can think of it as a copy of the DOM, that can be updated without affecting the actual DOM. It has all the same properties as the real DOM object, but doesn’t have the ability to write to the screen like the real DOM.
+  - Virtual DOM is just like a blueprint of a machine, can do the changes in the blueprint but those changes will not directly apply to the machine.
+  - Reconciliation is a process to compare and keep in sync the two files (Real and Virtual DOM). Diffing algorithm is a technique of reconciliation which is used by React.
+- `Real DOM`
+  - The DOM represents the web page often called a document with a logical tree and each branch of the tree ends in a node and each node contains object programmers can modify the content of the document using a scripting language like javascript and the changes and updates to the dom are fast because of its tree-like structure but after changes, the updated element and its children have to be re-rendered to update the application UI so the re-rendering of the UI which make the dom slow all the UI components you need to be rendered for every dom update so real dom would render the entire list and not only those item that receives the update .
 
-- `not using keys(not acceptable) <<<<<< index as key < unique key(best practice).`
+| `Real DOM`                                                       | `Virtual DOM`                                            |
+| ---------------------------------------------------------------- | -------------------------------------------------------- |
+| DOM manipulation is very expensive                               | DOM manipulation is very easy                            |
+| There is too much memory wastage                                 | No memory wastage                                        |
+| It updates Slow                                                  | It updates fast                                          |
+| It can directly update HTML                                      | It can’t update HTML directly                            |
+| Creates a new DOM if the element updates.                        | Update the JSX if the element update                     |
+| It allows us to directly target any specific node (HTML element) | It can produce about 200,000 Virtual DOM Nodes / Second. |
+| It represents the UI of your application                         | It is only a virtual representation of the DOM           |
 
-- Two type of export `named export(multiple export)` and `default export`
+#  05: 
 
-- Default Export/Import
+## Q: What is the difference between `Named export`, `Default export`, and `* as export`?
+
+A: ES6 provides us to import & export a module and use it in other files. ES6 provides two ways to export a module from a file: `named export` and `default export`.
+In `Named export`, one can have multiple named exports per file. Then import the specific exports they want surrounded in `{}` braces. The name of imported module has to be the same as the name of the exported module.
+In `Named export`, the component is exported from MyComponent.js file like:
 
 ```js
-export default component;
-import component from "path";
-
-- Named Export/Import
-
-Export const Component;
-import {component} from "path"
+export const MyComponent = () => {}
+export const MyComponent2 = () => {}
 ```
 
+and the component is imported from MyComponent.js file like: here we must use `{}` in MyComponent.
 
-# React Hooks
-(Normal JS utility functions )
+```js
+// ex. importing a single named export
+import { MyComponent } from "./MyComponent";
 
-- 
+// ex. importing multiple named exports
+import { MyComponent, MyComponent2 } from "./MyComponent";
+
+// ex. giving a named import a different name by using "as":
+import { MyComponent2 as MyNewComponent } from "./MyComponent";
+```
+
+In `Default export`, One can have only one default export per file. The naming of import is completely independent in default export and we can use any name we like.
+In `Default export`, the component is exported from MyComponent.js file like:
+
+```js
+const MyComponent = () => {}
+export default MyComponent;
+```
+
+and the component is imported from MyComponent.js file like: here we must omit `{}` in MyComponent.
+
+```js
+import MyComponent from "./MyComponent";
+```
+
+In `* as export`, it is used to import the whole module as a component and access the components inside the module.
+In `* as export`, the component is exported from MyComponent.js file like:
+
+```js
+export const MyComponent = () => {}
+export const MyComponent2 = () => {}
+export const MyComponent3 = () => {}
+```
+
+and the component is imported from MyComponent.js file like:
+
+```js
+import * as MainComponents from "./MyComponent";
+```
+
+Now we can use them in JSX as:
+
+```js
+<MainComponents.MyComponent />
+<MainComponents.MyComponent2 />
+<MainComponents.MyComponent3 />
+```
+
+We can use `Named export` and `Default export` together. So you should export like:
+
+```js
+export const MyComponent2 = () => {}
+const MyComponent = () => {}
+export default MyComponent;
+```
+
+and import like:
+
+```js
+import MyComponent, {MyComponent2} from "./MyComponent";
+```
+
+## Q: What are `React Hooks`?
+
+A: In React version 16.8, React introduced a new pattern called Hooks. React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects.
+Hooks allow you to reuse stateful logic without changing your component hierarchy. This makes it easy to share Hooks among many components or with the community.
+
+### React provides a bunch of standard in-built hooks:
+
+- useState: To manage states. Returns a stateful value and an updater function to update it.
+- useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+- useContext: To return the current value for a context.
+- useReducer: A useState alternative to help with complex state management.
+- useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
+- useMemo: It returns a memoized value that helps in performance optimizations.
+- useRef: It returns a ref object with a current property. The ref object is mutable. It is mainly used to access a child component imperatively.
+- useLayoutEffect: It fires at the end of all DOM mutations. It's best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
+- useDebugValue: Helps to display a label in React DevTools for custom hooks.
+
+## Q: Why do we need `useState Hook`?
+
+A: `useState hook` is used to maintain the state in our React application. It keeps track of the state changes so basically useState has the ability to encapsulate local state in a functional component.
+The useState hook is a special function that takes the `initial state` as an `argument` and `returns an array` of two entries. UseState encapsulate only singular value from the state, for multiple state need to have useState calls.
+
+#### Syntax for useState hook
+
+```js
+const [state, setState] = useState(initialstate);
+```
+
+#### Importing: To use useState you need to import useState from react as shown below:
+
+```js
+import React, { useState } from "react";
+```
+
+we can use Hooks in Functional Components
+
+```js
+const Example = (props) => {
+  // You can use Hooks here!
+  return <div />;
+}
+```
