@@ -1,6 +1,6 @@
 
 import RestaurentCard from "./RestaurentCard";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import resList from "../utils/mockData";
 
 const Body = () =>{
@@ -10,72 +10,16 @@ const [ListOfRestaurents,setListOfRestaurents] =  useState(resList);
 
 // const ListOfRestaurents =  arr[0]
 // const arsetListOfRestaurents = arr[1]
+useEffect(()=>{
+    fetchData();
 
+},[])
 
 // Normal js variable
 
-  let ListOfRestaurentsjs = [
-{
-    "info": {
-      "id": "151649",
-      "name": "Hotel Sai Nath & Sai Restaurant",
-      "cloudinaryImageId": "vkhcohhmqfczycw9vsar",
-      "locality": "railway station",
-      "areaName": "Chhindwara Locality",
-      "costForTwo": "₹200 for two",
-      "avgRating":"3.5",
-      "cuisines": [
-        "North Indian",
-        "South Indian",
-        "Chinese",
-        "Beverages",
-        "Fast Food",
-        "Desserts"
-      ],
-    }
-  },
-  {
-    "info": {
-      "id": "151650", // should have a unique ID
-      "name": "Dominos",
-      "cloudinaryImageId": "vkhcohhmqfczycw9vsar",
-      "locality": "railway station",
-      "areaName": "Chhindwara Locality",
-      "costForTwo": "₹200 for two",
-      "avgRating":"4.5",
-      "cuisines": [
-        "North Indian",
-        "South Indian",
-        "Chinese",
-        "Beverages",
-        "Fast Food",
-        "Desserts"
-      ],
-    }
-  },
-  {
-    "info": {
-      "id": "151651", // should have a unique ID
-      "name": "KFC",
-      "cloudinaryImageId": "vkhcohhmqfczycw9vsar",
-      "locality": "railway station",
-      "areaName": "Chhindwara Locality",
-      "costForTwo": "₹200 for two",
-      "avgRating":"4.0",
-      "cuisines": [
-        "North Indian",
-        "South Indian",
-        "Chinese",
-        "Beverages",
-        "Fast Food",
-        "Desserts"
-      ],
-    }
-  }, 
-];
-
-
- 
+ const fetchData = () =>{
+      const data = fetch();
+ }
     return(
       <div className="body">
         <div className="filters">
