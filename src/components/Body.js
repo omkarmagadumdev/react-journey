@@ -18,7 +18,7 @@ useEffect(()=>{
 // Normal js variable
 
  const fetchData = () =>{
-      const data = fetch();
+      const data = fetch("");
  }
     return(
       <div className="body">
